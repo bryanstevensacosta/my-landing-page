@@ -1,0 +1,84 @@
+{
+  "header": {
+    "brand": "DevPortfolio",
+    "nav": {
+      "solutions": "Soluciones",
+      "projects": "Proyectos",
+      "stack": "Stack",
+      "journey": "Trayectoria"
+    },
+    "downloadCV": "Descargar CV"
+  },
+  "hero": {
+    "badge": "Software Developer",
+    "title": "Construyo el futuro con",
+    "titleHighlight": "código de alto impacto",
+    "description": "Especialista en arquitecturas escalables, IA y desarrollo Full-Stack. Transformo la visión de tu startup en productos digitales robustos y memorables.",
+    "cta": {
+      "explore": "Explorar Proyectos",
+      "contact": "Iniciar Contacto"
+    },
+    "guarantee": "Proyectos entregados a tiempo y con calidad técnica garantizada"
+  },
+  "stats": {
+    "achievements": {
+      "value": "+40",
+      "label": "Éxitos logrados"
+    },
+    "experience": {
+      "value": "6+",
+      "label": "Años experiencia"
+    },
+    "mvps": {
+      "value": "25",
+      "label": "MVPs Lanzados"
+    }
+  },
+  "projects": {
+    "badge": "Portfolio",
+    "title": "Proyectos",
+    "titleHighlight": "Destacados",
+    "description": "Una selección de arquitecturas digitales diseñadas para el rendimiento, la escalabilidad y la experiencia de usuario excepcional.",
+    "cta": {
+      "viewCase": "Ver Caso de Estudio",
+      "viewDetails": "Detalles Técnicos",
+      "viewAll": "Ver todos los proyectos"
+    },
+    "callToAction": "¿Tienes un proyecto ambicioso en mente?",
+    "items": {
+      "defi": {
+        "title": "DeFi Protocol Dashboard",
+        "description": "Plataforma institucional para el monitoreo de activos digitales y smart contracts en tiempo real con seguridad de grado bancario."
+      },
+      "neural": {
+        "title": "Neural Engine API",
+        "description": "Infraestructura de microservicios para el procesamiento de lenguaje natural optimizado para baja latencia.",
+        "category": "Backend Architecture"
+      },
+      "saas": {
+        "title": "SaaS Analytics SDK",
+        "description": "Kit de desarrollo para integración de métricas avanzadas en aplicaciones empresariales de gran escala.",
+        "stat": "Performance +98%"
+      },
+      "fintech": {
+        "title": "Fintech Core System",
+        "description": "Rediseño integral de la arquitectura de transacciones para una plataforma financiera líder, reduciendo tiempos de respuesta en un 40%."
+      }
+    }
+  },
+  "floatingCards": {
+    "codeCard": {
+      "filename": "realtime_metrics.py"
+    },
+    "appCard": {
+      "title": "Fintech Platform",
+      "status": "ONLINE",
+      "cta": "Confirm Transaction"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 DevPortfolio. Built with Next.js and Tailwind.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}

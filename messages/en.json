@@ -1,0 +1,84 @@
+{
+  "header": {
+    "brand": "DevPortfolio",
+    "nav": {
+      "solutions": "Solutions",
+      "projects": "Projects",
+      "stack": "Stack",
+      "journey": "Journey"
+    },
+    "downloadCV": "Download CV"
+  },
+  "hero": {
+    "badge": "Software Developer",
+    "title": "Building the future with",
+    "titleHighlight": "high-impact code",
+    "description": "Specialist in scalable architectures, AI, and Full-Stack development. I transform your startup vision into robust and memorable digital products.",
+    "cta": {
+      "explore": "Explore Projects",
+      "contact": "Start Contact"
+    },
+    "guarantee": "Projects delivered on time with guaranteed technical quality"
+  },
+  "stats": {
+    "achievements": {
+      "value": "+40",
+      "label": "Achievements"
+    },
+    "experience": {
+      "value": "6+",
+      "label": "Years Experience"
+    },
+    "mvps": {
+      "value": "25",
+      "label": "MVPs Launched"
+    }
+  },
+  "projects": {
+    "badge": "Portfolio",
+    "title": "Featured",
+    "titleHighlight": "Projects",
+    "description": "A selection of digital architectures designed for performance, scalability, and exceptional user experience.",
+    "cta": {
+      "viewCase": "View Case Study",
+      "viewDetails": "Technical Details",
+      "viewAll": "View all projects"
+    },
+    "callToAction": "Have an ambitious project in mind?",
+    "items": {
+      "defi": {
+        "title": "DeFi Protocol Dashboard",
+        "description": "Institutional platform for real-time monitoring of digital assets and smart contracts with bank-grade security."
+      },
+      "neural": {
+        "title": "Neural Engine API",
+        "description": "Microservices infrastructure for natural language processing optimized for low latency.",
+        "category": "Backend Architecture"
+      },
+      "saas": {
+        "title": "SaaS Analytics SDK",
+        "description": "Development kit for integrating advanced metrics in large-scale enterprise applications.",
+        "stat": "Performance +98%"
+      },
+      "fintech": {
+        "title": "Fintech Core System",
+        "description": "Complete redesign of transaction architecture for a leading financial platform, reducing response times by 40%."
+      }
+    }
+  },
+  "floatingCards": {
+    "codeCard": {
+      "filename": "realtime_metrics.py"
+    },
+    "appCard": {
+      "title": "Fintech Platform",
+      "status": "ONLINE",
+      "cta": "Confirm Transaction"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 DevPortfolio. Built with Next.js and Tailwind.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}
