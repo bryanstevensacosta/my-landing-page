@@ -1,5 +1,5 @@
 import { Header } from '@/widgets/header/ui/Header'
-import { Hero } from '@/widgets/hero/ui/Hero'
+import { Hero } from '@/widgets/hero/ui'
 import { FeaturedProjects } from '@/widgets/featured-projects/ui/FeaturedProjects'
 
 export const dynamic = 'force-dynamic'

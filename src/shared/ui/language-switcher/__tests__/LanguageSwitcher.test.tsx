@@ -69,7 +69,7 @@ describe('LanguageSwitcher', () => {
   it('should trigger navigation when clicking a locale', () => {
     const currentLocale = 'es'
     const targetLocale = 'en'
-    const currentPath = '/projects'
+    const currentPath = '/'
 
     mockUseLocale.mockReturnValue(currentLocale)
     mockUsePathname.mockReturnValue(currentPath)

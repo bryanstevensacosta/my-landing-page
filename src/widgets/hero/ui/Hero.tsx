@@ -1,3 +1,5 @@
+'use client'
+
 import { ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Button } from '@/shared/ui/button'
@@ -5,9 +7,12 @@ import { Avatar } from '@/shared/ui/avatar'
 import { TechStackScroller } from './TechStackScroller'
 import { StatsCards } from './StatsCards'
 import { SocialLinks } from '@/features/social-share/ui/SocialLinks'
+import RotatingText from '@/shared/ui/rotating-text'
 
 export function Hero() {
   const t = useTranslations('hero')
+  const rotatingWords = t.raw('rotatingWords') as string[]
+
   return (
     <main className="relative min-h-screen pt-32 sm:pt-32 md:pt-36 pb-16 md:pb-24 flex flex-col items-center overflow-x-hidden">
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[90vw] max-w-[800px] h-[60vh] max-h-[600px] bg-primary/20 rounded-full blur-[120px] md:blur-[160px] -z-10 opacity-50" />
@@ -28,15 +33,32 @@ export function Hero() {
       <div className="container max-w-6xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center w-full">
         <Avatar />
 
-        <div className="text-center space-y-6 md:space-y-8 max-w-4xl mx-auto w-full overflow-hidden">
+        <div className="text-center space-y-6 md:space-y-8 max-w-4xl mx-auto w-full">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-neon-blue">
             <Sparkles className="size-3 sm:size-3.5" /> {t('badge')}
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight font-display leading-[1.1] text-white text-balance px-4 sm:px-0 break-words hyphens-auto w-full">
-            {t('title')}{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-primary to-neon-purple animate-pulse-glow break-words">
-              {t('titleHighlight')}
+          <h1 className="text-7xl sm:text-7xl md:text-8xl lg:text-8xl font-bold tracking-tight font-display leading-[1.1] text-white px-4 sm:px-0 w-full flex flex-col items-center">
+            <span>Turning ideas</span>
+            <span>into software</span>
+            <span className="flex items-center gap-2 sm:gap-3">
+              for{' '}
+              <span
+                className="inline-block px-3 py-1 rounded-xl"
+                style={{ background: 'linear-gradient(90deg, #4800ffff)' }}
+              >
+                <RotatingText
+                  texts={rotatingWords}
+                  mainClassName="inline-flex"
+                  elementLevelClassName="text-white"
+                  splitBy="words"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  rotationInterval={3000}
+                />
+              </span>
             </span>
           </h1>
 

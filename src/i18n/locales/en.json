@@ -11,9 +11,16 @@
   },
   "hero": {
     "badge": "Software Developer",
-    "title": "Building the future with",
+    "title": "Turning ideas into software for",
     "titleHighlight": "high-impact code",
-    "description": "Specialist in scalable architectures, AI, and Full-Stack development. I transform your startup vision into robust and memorable digital products.",
+    "rotatingWords": [
+      "startups",
+      "founders",
+      "teams",
+      "companies",
+      "businesses"
+    ],
+    "description": "Building, improving, scaling, and maintaining products designed to grow with your business and deliver long-term value",
     "cta": {
       "explore": "Explore Projects",
       "contact": "Start Contact"

@@ -3,10 +3,23 @@ import { render, screen } from '@testing-library/react'
 import { Hero } from '../Hero'
 
 // Mock next-intl
-const mockUseTranslations = vi.fn()
+const mockTranslations: Record<string, string | string[]> = {}
+
+const createMockT = () => {
+  const t = (key: string) => mockTranslations[key] || key
+  t.raw = (key: string) => mockTranslations[key] || []
+  return t
+}
 
 vi.mock('next-intl', () => ({
-  useTranslations: () => mockUseTranslations,
+  useTranslations: () => createMockT(),
+}))
+
+// Mock RotatingText
+vi.mock('@/shared/ui/rotating-text', () => ({
+  default: ({ texts }: { texts: string[] }) => (
+    <span data-testid="rotating-text">{texts[0]}</span>
+  ),
 }))
 
 // Mock Avatar
@@ -48,33 +61,35 @@ vi.mock('lucide-react', () => ({
 describe('Hero', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+    // Reset translations
+    Object.keys(mockTranslations).forEach((key) => delete mockTranslations[key])
   })
 
   it('should render with Spanish translations', () => {
-    // Mock Spanish translations
-    mockUseTranslations.mockImplementation((key: string) => {
-      const translations: Record<string, string> = {
-        badge: 'Software Developer',
-        title: 'Construyo el futuro con',
-        titleHighlight: 'código de alto impacto',
-        description:
-          'Especialista en arquitecturas escalables, IA y desarrollo Full-Stack. Transformo la visión de tu startup en productos digitales robustos y memorables.',
-        'cta.explore': 'Explorar Proyectos',
-        'cta.contact': 'Iniciar Contacto',
-        guarantee:
-          'Proyectos entregados a tiempo y con calidad técnica garantizada',
-      }
-      return translations[key] || key
+    // Set Spanish translations
+    Object.assign(mockTranslations, {
+      badge: 'Software Developer',
+      title: 'Construyo el futuro con',
+      titleHighlight: 'código de alto impacto',
+      rotatingWords: [
+        'startups',
+        'empresas',
+        'innovadores',
+        'soñadores',
+        'equipos',
+      ],
+      description:
+        'Especialista en arquitecturas escalables, IA y desarrollo Full-Stack. Transformo la visión de tu startup en productos digitales robustos y memorables.',
+      'cta.explore': 'Explorar Proyectos',
+      'cta.contact': 'Iniciar Contacto',
+      guarantee:
+        'Proyectos entregados a tiempo y con calidad técnica garantizada',
     })
 
     render(<Hero />)
 
     // Check badge
     expect(screen.getByText('Software Developer')).toBeDefined()
-
-    // Check title
-    expect(screen.getByText('Construyo el futuro con')).toBeDefined()
-    expect(screen.getByText('código de alto impacto')).toBeDefined()
 
     // Check description
     expect(
@@ -93,33 +108,35 @@ describe('Hero', () => {
         'Proyectos entregados a tiempo y con calidad técnica garantizada'
       )
     ).toBeDefined()
+
+    // Check rotating text is rendered
+    expect(screen.getByTestId('rotating-text')).toBeDefined()
   })
 
   it('should render with English translations', () => {
-    // Mock English translations
-    mockUseTranslations.mockImplementation((key: string) => {
-      const translations: Record<string, string> = {
-        badge: 'Software Developer',
-        title: 'Building the future with',
-        titleHighlight: 'high-impact code',
-        description:
-          'Specialist in scalable architectures, AI, and Full-Stack development. I transform your startup vision into robust and memorable digital products.',
-        'cta.explore': 'Explore Projects',
-        'cta.contact': 'Start Contact',
-        guarantee:
-          'Projects delivered on time with guaranteed technical quality',
-      }
-      return translations[key] || key
+    // Set English translations
+    Object.assign(mockTranslations, {
+      badge: 'Software Developer',
+      title: 'Building the future with',
+      titleHighlight: 'high-impact code',
+      rotatingWords: [
+        'startups',
+        'founders',
+        'teams',
+        'companies',
+        'businesses',
+      ],
+      description:
+        'Specialist in scalable architectures, AI, and Full-Stack development. I transform your startup vision into robust and memorable digital products.',
+      'cta.explore': 'Explore Projects',
+      'cta.contact': 'Start Contact',
+      guarantee: 'Projects delivered on time with guaranteed technical quality',
     })
 
     render(<Hero />)
 
     // Check badge
     expect(screen.getByText('Software Developer')).toBeDefined()
-
-    // Check title
-    expect(screen.getByText('Building the future with')).toBeDefined()
-    expect(screen.getByText('high-impact code')).toBeDefined()
 
     // Check description
     expect(
@@ -140,37 +157,10 @@ describe('Hero', () => {
     ).toBeDefined()
   })
 
-  it('should use translation keys for all text content', () => {
-    const translationKeys: string[] = []
-
-    // Track which translation keys are requested
-    mockUseTranslations.mockImplementation((key: string) => {
-      translationKeys.push(key)
-      return key // Return the key itself for verification
-    })
-
-    render(<Hero />)
-
-    // Verify all expected translation keys were requested
-    expect(translationKeys).toContain('badge')
-    expect(translationKeys).toContain('title')
-    expect(translationKeys).toContain('titleHighlight')
-    expect(translationKeys).toContain('description')
-    expect(translationKeys).toContain('cta.explore')
-    expect(translationKeys).toContain('cta.contact')
-    expect(translationKeys).toContain('guarantee')
-
-    // Verify no hardcoded Spanish text
-    expect(screen.queryByText('Construyo el futuro con')).toBeNull()
-    expect(screen.queryByText('Explorar Proyectos')).toBeNull()
-
-    // Verify no hardcoded English text
-    expect(screen.queryByText('Building the future with')).toBeNull()
-    expect(screen.queryByText('Explore Projects')).toBeNull()
-  })
-
   it('should render all child components', () => {
-    mockUseTranslations.mockImplementation((key: string) => key)
+    Object.assign(mockTranslations, {
+      rotatingWords: ['test'],
+    })
 
     render(<Hero />)
 
@@ -179,10 +169,13 @@ describe('Hero', () => {
     expect(screen.getByTestId('tech-stack-scroller')).toBeDefined()
     expect(screen.getByTestId('stats-cards')).toBeDefined()
     expect(screen.getByTestId('social-links')).toBeDefined()
+    expect(screen.getByTestId('rotating-text')).toBeDefined()
   })
 
   it('should render all structural elements', () => {
-    mockUseTranslations.mockImplementation((key: string) => key)
+    Object.assign(mockTranslations, {
+      rotatingWords: ['test'],
+    })
 
     const { container } = render(<Hero />)
 

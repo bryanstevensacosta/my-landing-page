@@ -14,4 +14,11 @@ pnpm lint-staged || {
   exit 1
 }
 
+# Run tests
+echo "🧪 Running tests..."
+pnpm test || {
+  echo "❌ Tests failed. Please fix the errors above."
+  exit 1
+}
+
 echo "✅ All pre-commit checks passed!"

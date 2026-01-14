@@ -2,7 +2,12 @@ export function Avatar() {
   return (
     <div className="relative group mb-10 animate-float">
       {/* Glow Effect */}
-      <div className="absolute -inset-1.5 bg-gradient-to-r from-neon-purple via-primary to-neon-green rounded-full opacity-60 blur-lg group-hover:opacity-100 transition duration-700" />
+      <div
+        className="absolute -inset-1.5 rounded-full opacity-60 blur-lg group-hover:opacity-100 transition duration-700"
+        style={{
+          background: 'linear-gradient(90deg, #452CFF)',
+        }}
+      />
 
       {/* Avatar Container */}
       <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-full p-1.5 bg-background">

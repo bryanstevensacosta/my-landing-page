@@ -13,6 +13,13 @@
     "badge": "Software Developer",
     "title": "Construyo el futuro con",
     "titleHighlight": "código de alto impacto",
+    "rotatingWords": [
+      "startups",
+      "empresas",
+      "innovadores",
+      "soñadores",
+      "equipos"
+    ],
     "description": "Especialista en arquitecturas escalables, IA y desarrollo Full-Stack. Transformo la visión de tu startup en productos digitales robustos y memorables.",
     "cta": {
       "explore": "Explorar Proyectos",
