@@ -96,7 +96,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className="dark">
       <body
-        className={`${notoSans.variable} ${spaceGrotesk.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${notoSans.variable} ${spaceGrotesk.variable} ${geistMono.variable} font-sans antialiased overflow-x-hidden`}
       >
         <NextIntlClientProvider messages={messages}>
           {children}

@@ -9,7 +9,7 @@ import { SocialLinks } from '@/features/social-share/ui/SocialLinks'
 export function Hero() {
   const t = useTranslations('hero')
   return (
-    <main className="relative min-h-screen pt-20 sm:pt-28 md:pt-36 pb-16 md:pb-24 flex flex-col items-center overflow-hidden">
+    <main className="relative min-h-screen pt-32 sm:pt-32 md:pt-36 pb-16 md:pb-24 flex flex-col items-center overflow-x-hidden">
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[90vw] max-w-[800px] h-[60vh] max-h-[600px] bg-primary/20 rounded-full blur-[120px] md:blur-[160px] -z-10 opacity-50" />
       <div className="absolute bottom-[10%] right-[-10%] w-[70vw] max-w-[500px] h-[50vh] max-h-[500px] bg-neon-purple/15 rounded-full blur-[100px] md:blur-[120px] -z-10" />
       <div className="absolute top-[20%] left-[-10%] w-[60vw] max-w-[400px] h-[40vh] max-h-[400px] bg-neon-green/10 rounded-full blur-[80px] md:blur-[100px] -z-10" />
@@ -25,22 +25,22 @@ export function Hero() {
         }}
       />
 
-      <div className="container max-w-6xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center">
+      <div className="container max-w-6xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center w-full">
         <Avatar />
 
-        <div className="text-center space-y-6 md:space-y-8 max-w-4xl mx-auto">
+        <div className="text-center space-y-6 md:space-y-8 max-w-4xl mx-auto w-full overflow-hidden">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-neon-blue">
             <Sparkles className="size-3 sm:size-3.5" /> {t('badge')}
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight font-display leading-[1.05] text-white text-balance px-4 sm:px-0">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight font-display leading-[1.1] text-white text-balance px-4 sm:px-0 break-words hyphens-auto w-full">
             {t('title')}{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-primary to-neon-purple animate-pulse-glow">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-primary to-neon-purple animate-pulse-glow break-words">
               {t('titleHighlight')}
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-medium max-w-2xl mx-auto leading-relaxed text-pretty px-4 sm:px-0">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground font-medium max-w-2xl mx-auto leading-relaxed text-pretty px-4 sm:px-0 w-full">
             {t('description')}
           </p>
 
