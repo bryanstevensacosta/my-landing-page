@@ -164,7 +164,16 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-25%);
+  }
+}
+
+@keyframes scroll-seamless {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100px * 16));
   }
 }
 
@@ -221,6 +230,10 @@
 
   .animate-scroll {
     animation: scroll 30s linear infinite;
+  }
+
+  .animate-scroll-seamless {
+    animation: scroll-seamless 10s linear infinite;
   }
 
   .animate-float {
