@@ -41,11 +41,6 @@ vi.mock('../TechStackScroller', () => ({
   ),
 }))
 
-// Mock StatsCards
-vi.mock('../StatsCards', () => ({
-  StatsCards: () => <div data-testid="stats-cards">Stats</div>,
-}))
-
 // Mock SocialLinks
 vi.mock('@/features/social-share/ui/SocialLinks', () => ({
   SocialLinks: () => <div data-testid="social-links">Social Links</div>,
@@ -167,7 +162,6 @@ describe('Hero', () => {
     // Check all child components are rendered
     expect(screen.getByTestId('avatar')).toBeDefined()
     expect(screen.getByTestId('tech-stack-scroller')).toBeDefined()
-    expect(screen.getByTestId('stats-cards')).toBeDefined()
     expect(screen.getByTestId('social-links')).toBeDefined()
     expect(screen.getByTestId('rotating-text')).toBeDefined()
   })
