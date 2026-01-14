@@ -107,12 +107,12 @@
     }
   },
   "metadata": {
-    "title": "Software Developer - Portfolio",
-    "description": "Senior Software Engineer specializing in scalable architectures, AI, and Full-Stack development",
+    "title": "Software Developer",
+    "description": "Software Developer specializing in scalable architectures, AI, and Full-Stack development",
     "openGraph": {
-      "title": "Software Developer - Portfolio",
-      "description": "Senior Software Engineer specializing in scalable architectures, AI, and Full-Stack development",
-      "siteName": "DevPortfolio"
+      "title": "Software Developer",
+      "description": "Software Developer specializing in scalable architectures, AI, and Full-Stack development",
+      "siteName": "Bryan S. Nunez A."
     }
   }
 }
