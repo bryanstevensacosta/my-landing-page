@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { projects } from '../projects.data'
-import esMessages from '@/../messages/es.json'
-import enMessages from '@/../messages/en.json'
+import esMessages from '@/i18n/locales/es.json'
+import enMessages from '@/i18n/locales/en.json'
 
 /**
  * Unit tests for project translations

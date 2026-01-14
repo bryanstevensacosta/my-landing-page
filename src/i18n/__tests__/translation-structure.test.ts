@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import * as fc from 'fast-check'
-import esTranslations from '../../../messages/es.json'
-import enTranslations from '../../../messages/en.json'
+import esTranslations from '@/i18n/locales/es.json'
+import enTranslations from '@/i18n/locales/en.json'
 
 /**
  * Feature: i18n-implementation, Property 3: Translation keys follow namespace structure

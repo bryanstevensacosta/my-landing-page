@@ -3,8 +3,8 @@ import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { NextIntlClientProvider } from 'next-intl'
 import { LanguageSwitcher } from '@/shared/ui/language-switcher/LanguageSwitcher'
-import esMessages from '../../../messages/es.json'
-import enMessages from '../../../messages/en.json'
+import esMessages from '@/i18n/locales/es.json'
+import enMessages from '@/i18n/locales/en.json'
 
 /**
  * Integration Test: Full Locale Switching Flow

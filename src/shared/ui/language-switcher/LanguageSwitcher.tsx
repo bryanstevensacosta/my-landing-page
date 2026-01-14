@@ -11,7 +11,9 @@ export function LanguageSwitcher() {
   const pathname = usePathname()
 
   const handleLocaleChange = (newLocale: Locale) => {
-    router.replace(pathname, { locale: newLocale })
+    // Use '/' as the pathname to ensure we're always at the root
+    // The router will handle adding the locale prefix
+    router.replace('/', { locale: newLocale })
   }
 
   return (

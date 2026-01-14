@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest'
 import { locales } from '../config'
-import esMessages from '../../../messages/es.json'
-import enMessages from '../../../messages/en.json'
+import esMessages from '@/i18n/locales/es.json'
+import enMessages from '@/i18n/locales/en.json'
 
 /**
  * Integration Test: SEO Metadata

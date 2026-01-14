@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest'
 import * as fc from 'fast-check'
 import { projects } from '../projects.data'
-import esMessages from '@/../messages/es.json'
-import enMessages from '@/../messages/en.json'
+import esMessages from '@/i18n/locales/es.json'
+import enMessages from '@/i18n/locales/en.json'
 
 /**
  * Feature: i18n-implementation, Property 8: Translation completeness across locales

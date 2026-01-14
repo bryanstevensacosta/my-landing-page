@@ -2,13 +2,16 @@ import createMiddleware from 'next-intl/middleware'
 import { routing } from './i18n/routing'
 import { locales, defaultLocale } from './i18n/config'
 
-export default createMiddleware({
+const middleware = createMiddleware({
   ...routing,
   localeDetection: true,
   localePrefix: routing.localePrefix,
   defaultLocale,
   locales,
 })
+
+export default middleware
+export { middleware as proxy }
 
 export const config = {
   // Match all pathnames except for

@@ -10,8 +10,8 @@
 
 import { describe, it, expect } from 'vitest'
 import fc from 'fast-check'
-import esTranslations from '@/../messages/es.json'
-import enTranslations from '@/../messages/en.json'
+import esTranslations from '@/i18n/locales/es.json'
+import enTranslations from '@/i18n/locales/en.json'
 
 // Helper to simulate next-intl's interpolation behavior
 function interpolate(template: string, values: Record<string, any>): string {

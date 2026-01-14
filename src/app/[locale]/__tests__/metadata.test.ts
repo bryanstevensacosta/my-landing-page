@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import esTranslations from '../../../../messages/es.json'
-import enTranslations from '../../../../messages/en.json'
+import esTranslations from '@/i18n/locales/es.json'
+import enTranslations from '@/i18n/locales/en.json'
 
 describe('Metadata Translations', () => {
   it('should have metadata translations in Spanish', () => {
