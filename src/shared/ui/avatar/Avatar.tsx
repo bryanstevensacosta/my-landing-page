@@ -11,7 +11,7 @@ export function Avatar() {
       <div
         className="absolute -inset-1.5 rounded-full opacity-60 blur-lg group-hover:opacity-100 transition duration-700"
         style={{
-          background: 'linear-gradient(90deg, #4800ffff, #E4606E)',
+          background: 'linear-gradient(90deg, #E4606E, #E4606E)',
         }}
       />
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react'
+import { Sparkles } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { Button } from '@/shared/ui/button'
@@ -58,20 +58,27 @@ export function Hero() {
 
         <div className="text-center space-y-6 md:space-y-8 max-w-4xl mx-auto w-full">
           <div
-            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em]"
-            style={{ color: '#00E78A' }}
+            className="inline-flex items-center gap-2 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full border border-white/10 bg-white/5 text-xs sm:text-sm md:text-base tracking-[0.2em] font-figtree mt-4 sm:mt-6 md:mt-8"
+            style={{ color: '#ffffffff', fontWeight: 800 }}
           >
-            <Sparkles className="size-3 sm:size-3.5" /> {t('badge')}
+            <Image
+              src="/code-square-rounded.svg"
+              alt="code"
+              width={16}
+              height={16}
+              className="size-4 sm:size-5 md:size-6"
+            />
+            {t('badge')}
           </div>
 
           <h1
-            className="sm:text-7xl md:text-8xl lg:text-8xl font-bold tracking-tight font-figtree leading-[1.1] text-white px-2 sm:px-0 w-full text-center"
-            style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)' }}
+            className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight font-figtree leading-[1.1] text-white px-2 sm:px-0 w-full text-center"
+            style={{ fontSize: 'clamp(3rem, 10vw, 5rem)' }}
           >
             <span className="block">
               {t('titleLine1')}{' '}
               <span
-                className="font-cookie font-normal text-[1.2em] inline-flex items-center gap-2"
+                className="font-cookie font-normal text-[1.5em] inline-flex items-center gap-2"
                 style={{ color: '#DD5C74' }}
               >
                 {t('titleLine1Italic')}
@@ -80,19 +87,17 @@ export function Hero() {
                   alt="lamp"
                   width={40}
                   height={40}
-                  className="inline-block"
+                  className="inline-block w-12 h-12 sm:w-15 sm:h-15 md:w-18 md:h-18"
                   style={{
                     transform: 'rotate(15deg)',
-                    width: 'auto',
-                    height: 'auto',
                   }}
                 />
               </span>
             </span>
             <span className="block">{t('titleLine2')}</span>
-            <span className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mt-4 sm:mt-6">
+            <span className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mt-3 sm:mt-3">
               <span
-                className="inline-block px-2 sm:px-3 py-0.5 sm:py-1 rounded-xl"
+                className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 rounded-xl"
                 style={{
                   background: 'linear-gradient(90deg, #4800ffff, #E4606E)',
                 }}
@@ -132,7 +137,7 @@ export function Hero() {
             <Button
               className="w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 rounded-2xl text-white font-bold transition-all hover:-translate-y-1 active:scale-95"
               style={{
-                background: '#4800ff',
+                background: '#4A2BFC',
                 boxShadow: isMobile ? 'none' : '0 0 30px rgba(72, 0, 255, 0.4)',
               }}
               onMouseEnter={
@@ -150,7 +155,14 @@ export function Hero() {
                   : undefined
               }
             >
-              {t('cta.explore')} <ArrowRight className="ml-2 size-4" />
+              {t('cta.explore')}{' '}
+              <Image
+                src="/folder-file.svg"
+                alt="folder"
+                width={64}
+                height={64}
+                className="ml-1 size-6"
+              />
             </Button>
             <Button
               variant="outline"
@@ -159,11 +171,6 @@ export function Hero() {
               {t('cta.contact')}
             </Button>
             <SocialLinks />
-          </div>
-
-          <div className="flex items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-xs md:text-sm text-muted-foreground uppercase tracking-widest pt-1 sm:pt-2">
-            <CheckCircle2 className="text-neon-green size-3.5 sm:size-4" />
-            <span>{t('guarantee')}</span>
           </div>
         </div>
       </div>

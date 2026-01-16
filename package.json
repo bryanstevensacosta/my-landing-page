@@ -14,7 +14,8 @@
     "prepare": "husky",
     "test": "vitest --run",
     "test:watch": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

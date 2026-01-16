@@ -10,6 +10,7 @@ import {
   Geist_Mono,
   Figtree,
   Cookie,
+  Bricolage_Grotesque,
 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { locales, type Locale } from '@/i18n/config'
@@ -42,6 +43,12 @@ const cookie = Cookie({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-cookie',
+})
+
+const bricolageGrotesque = Bricolage_Grotesque({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-bricolage',
 })
 
 export async function generateMetadata({
@@ -116,7 +123,7 @@ export default async function LocaleLayout({
     <ViewTransitions>
       <html lang={locale} className="dark">
         <body
-          className={`${notoSans.variable} ${spaceGrotesk.variable} ${geistMono.variable} ${figtree.variable} ${cookie.variable} font-sans antialiased overflow-x-hidden`}
+          className={`${notoSans.variable} ${spaceGrotesk.variable} ${geistMono.variable} ${figtree.variable} ${cookie.variable} ${bricolageGrotesque.variable} font-sans antialiased overflow-x-hidden`}
         >
           <NextIntlClientProvider messages={messages}>
             {children}

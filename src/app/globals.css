@@ -94,6 +94,7 @@
   --font-display: 'Space Grotesk', 'Geist Fallback', sans-serif;
   --font-figtree: 'Figtree', 'Geist Fallback', sans-serif;
   --font-cookie: 'Cookie', cursive;
+  --font-bricolage: 'Bricolage Grotesque';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -259,5 +260,9 @@
 
   .font-cookie {
     font-family: var(--font-cookie);
+  }
+
+  .font-bricolage {
+    font-family: var(--font-bricolage);
   }
 }
