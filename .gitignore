@@ -28,6 +28,7 @@ next-env.d.ts
 
 # IDE
 .kiro/
+.vscode/
 
 # macOS
 .DS_Store
