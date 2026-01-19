@@ -31,3 +31,9 @@ terraform.rc
 
 # Lock file (optional - some teams commit this)
 # .terraform.lock.hcl
+
+# Environment files with secrets
+.envrc
+.env
+.env.local
+*.secret
