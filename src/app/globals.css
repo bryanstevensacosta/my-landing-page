@@ -265,4 +265,46 @@
   .font-bricolage {
     font-family: var(--font-bricolage);
   }
+
+  /* Services Section Styles */
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    opacity: 0.1;
+  }
+
+  .card-hover-effect {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .card-hover-effect:hover {
+    transform: translateY(-4px);
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 25px hsl(var(--primary) / 0.15);
+  }
+
+  .card-hover-effect:hover .icon-glow {
+    color: hsl(var(--primary));
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.6);
+  }
+
+  .card-hover-effect:hover .arrow-move {
+    transform: translateX(4px);
+    color: hsl(var(--primary));
+  }
+
+  /* AI Card Special Hover */
+  .ai-card:hover {
+    border-color: hsl(var(--neon-purple));
+    box-shadow: 0 0 25px hsl(var(--neon-purple) / 0.2);
+  }
+
+  .ai-card:hover .icon-glow {
+    color: hsl(var(--neon-purple));
+    text-shadow: 0 0 10px hsl(var(--neon-purple) / 0.6);
+  }
 }
