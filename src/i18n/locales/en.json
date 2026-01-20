@@ -2,7 +2,7 @@
   "header": {
     "brand": "Full-Stack Developer",
     "nav": {
-      "solutions": "Solutions",
+      "services": "Services",
       "projects": "Projects",
       "stack": "Stack",
       "journey": "Journey"
@@ -25,7 +25,7 @@
     "description": "Building, improving, scaling, and maintaining products designed to grow with your business and deliver long-term value",
     "cta": {
       "explore": "Explore Projects",
-      "contact": "@ Contact Me"
+      "contact": "Let's Talk"
     },
     "guarantee": "Projects delivered on time with guaranteed technical quality",
     "avatarAlt": "Developer Avatar"
@@ -343,7 +343,7 @@
   "services": {
     "label": "Services",
     "title": "WHAT I CAN DO",
-    "subtitle": "We build resilient digital infrastructure. From MVPs to enterprise-grade system migrations.",
+    "subtitle": "From early MVPs to complex enterprise migrations, built for resilience and scale.",
     "cards": {
       "custom-software": {
         "title": "Custom Software & MVPs",
@@ -366,8 +366,8 @@
         "description": "Functional, high-fidelity interfaces that balance usability, aesthetics, and performance."
       },
       "landing-pages": {
-        "title": "Landing Pages",
-        "description": "High-conversion architecture optimized for speed and SEO."
+        "title": "Landing Pages & Websites",
+        "description": "High-conversion, fast, SEO-optimized."
       }
     }
   }

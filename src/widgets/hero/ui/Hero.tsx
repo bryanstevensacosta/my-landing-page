@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { Button } from '@/shared/ui/button'
 import { Avatar } from '@/shared/ui/avatar'
-import { TechStackScroller } from './TechStackScrollerCSS'
 import { SocialLinks } from '@/features/social-share/ui/SocialLinks'
 import RotatingText from '@/shared/ui/rotating-text'
 import { useEffect, useState } from 'react'
@@ -90,7 +89,7 @@ export function Hero() {
 
           <h1
             className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight font-figtree leading-[1.1] text-white px-2 sm:px-0 w-full text-center"
-            style={{ fontSize: 'clamp(3rem, 10vw, 5rem)' }}
+            style={{ fontSize: 'clamp(3rem, 10vw, 7rem)' }}
           >
             <span className="block">
               {t('titleLine1')}{' '}
@@ -148,12 +147,10 @@ export function Hero() {
             {t('description')}
           </p>
 
-          <TechStackScroller />
-
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full justify-center pt-2 sm:pt-4 px-4 sm:px-0">
             <Button
               onClick={handleExploreClick}
-              className="w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 rounded-2xl text-white font-bold transition-all hover:-translate-y-1 active:scale-95 cursor-pointer"
+              className="transform-gpu w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 rounded-2xl text-white font-bold transition-all duration-300 hover:-translate-y-1 active:scale-95 cursor-pointer"
               style={{
                 background: '#4A2BFC',
                 boxShadow: isMobile ? 'none' : '0 0 30px rgba(72, 0, 255, 0.4)',
@@ -184,7 +181,7 @@ export function Hero() {
             </Button>
             <Button
               variant="outline"
-              className="w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 rounded-2xl border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 text-white font-bold transition-all hover:-translate-y-1 active:scale-95"
+              className="transform-gpu w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 rounded-2xl border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 text-white font-bold transition-all duration-300 hover:-translate-y-1 active:scale-95"
             >
               {t('cta.contact')}
             </Button>

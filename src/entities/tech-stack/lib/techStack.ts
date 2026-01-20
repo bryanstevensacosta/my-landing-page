@@ -2,7 +2,7 @@ import type { TechStackItem } from '../types'
 
 export const techStack: TechStackItem[] = [
   { logo: '/tech-logos/python.svg', altKey: 'python' },
-  { logo: '/tech-logos/rust.svg', altKey: 'rust' },
+  { logo: '/tech-logos/rust-dark.svg', altKey: 'rust' },
   { logo: '/tech-logos/java.svg', altKey: 'java' },
   { logo: '/tech-logos/typescript.svg', altKey: 'typescript' },
   { logo: '/tech-logos/nodejs.svg', altKey: 'nodejs' },
@@ -23,8 +23,8 @@ export const techStack: TechStackItem[] = [
   { logo: '/tech-logos/mongodb.svg', altKey: 'mongodb' },
   { logo: '/tech-logos/redis.svg', altKey: 'redis' },
   { logo: '/tech-logos/firebase.svg', altKey: 'firebase' },
-  { logo: '/tech-logos/kafka.svg', altKey: 'kafka' },
-  { logo: '/tech-logos/aws.svg', altKey: 'aws' },
+  { logo: '/tech-logos/kafka-dark.svg', altKey: 'kafka' },
+  { logo: '/tech-logos/aws-dark.svg', altKey: 'aws' },
   { logo: '/tech-logos/google-cloud.svg', altKey: 'googleCloud' },
   { logo: '/tech-logos/azure.svg', altKey: 'azure' },
   { logo: '/tech-logos/kubernetes.svg', altKey: 'kubernetes' },

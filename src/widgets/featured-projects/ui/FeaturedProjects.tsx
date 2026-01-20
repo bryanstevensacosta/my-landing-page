@@ -22,16 +22,22 @@ function ProjectCard({
     ? getTechStackIcons(project.techStackKeys)
     : []
 
+  // Clase consistente para el border-radius
+  const borderRadiusClass = 'rounded-2xl'
+
   return (
     <div
       className={`group cursor-pointer flex flex-col ${
         imagePosition === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'
-      } gap-6 lg:gap-8 items-center`}
+      } bg-white ${borderRadiusClass} shadow-lg transition-all duration-300 group-hover:shadow-2xl`}
       onClick={onClick}
     >
       {/* Image Container */}
-      <div className="relative w-full lg:w-1/2 rounded-2xl overflow-hidden bg-surface border border-white/10 shadow-lg transition-all duration-300 group-hover:shadow-2xl group-hover:border-white/20 flex-shrink-0">
-        <div className="relative w-full aspect-[3/2]">
+      <div
+        className={`relative w-full lg:w-1/2 flex-shrink-0 ${borderRadiusClass} overflow-hidden`}
+        style={{ aspectRatio: '3/2' }}
+      >
+        <div className="absolute inset-0 -m-[1px]">
           <Image
             src={project.image || '/defi-dashboard-crypto-finance-dark-ui.png'}
             alt={t(project.titleKey as any)}
@@ -53,11 +59,17 @@ function ProjectCard({
       </div>
 
       {/* Content */}
-      <div className="w-full lg:w-1/2 space-y-4">
-        <h3 className="text-2xl lg:text-3xl font-bold font-display tracking-tight">
+      <div
+        className={`w-full lg:w-1/2 p-6 space-y-4 flex flex-col justify-center ${
+          imagePosition === 'right'
+            ? 'lg:pl-8 lg:pr-4 lg:py-4'
+            : 'lg:pr-8 lg:pl-4 lg:py-4'
+        }`}
+      >
+        <h3 className="text-2xl lg:text-3xl font-bold font-display tracking-tight text-gray-900">
           {t(project.titleKey as any)}
         </h3>
-        <p className="text-gray-400 text-base lg:text-lg leading-relaxed">
+        <p className="text-gray-600 text-base lg:text-lg leading-relaxed">
           {t(project.descriptionKey as any)}
         </p>
         <div className="flex flex-wrap gap-3 pt-2">

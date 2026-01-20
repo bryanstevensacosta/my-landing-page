@@ -2,7 +2,7 @@
   "header": {
     "brand": "Desarrollador Full-Stack",
     "nav": {
-      "solutions": "Soluciones",
+      "services": "Soluciones",
       "projects": "Proyectos",
       "stack": "Stack",
       "journey": "Trayectoria"
@@ -366,8 +366,8 @@
         "description": "Interfaces funcionales de alta fidelidad."
       },
       "landing-pages": {
-        "title": "Páginas de Aterrizaje",
-        "description": "Arquitectura de alta conversión optimizada para velocidad y SEO."
+        "title": "Páginas de Aterrizaje y Sitios Web",
+        "description": "Alta conversión, rápidas, optimizadas para SEO."
       }
     }
   }

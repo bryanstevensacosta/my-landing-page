@@ -92,17 +92,17 @@ export function ServiceCard({ service }: ServiceCardProps) {
   }, [service.id, totalSegments])
 
   const cardClasses = cn(
-    'card-hover-effect group relative flex flex-col rounded-xl bg-card border',
-    'transition-all duration-300 ease-out',
-    'hover:-translate-y-1 hover:border-[#00E68B] hover:shadow-glow',
+    'card-hover-effect group relative flex flex-col rounded-xl bg-card/60 backdrop-blur-sm border h-full',
+    'transform-gpu transition-all duration-300 ease-out',
+    'hover:-translate-y-1 hover:border-[#00E68B] hover:shadow-glow hover:bg-card/70',
     service.variant === 'ai' && 'ai-card',
-    service.colSpan === 2 && 'lg:col-span-2',
-    service.colSpan === 1 && 'lg:col-span-1',
-    service.rowSpan === 2 && 'lg:row-span-2',
-    service.rowSpan === 1 && 'lg:row-span-1',
-    service.size === 'large' && 'min-h-[380px] justify-between p-8',
-    service.size === 'medium' && 'min-h-[320px] justify-between p-6',
-    service.size === 'small' && 'min-h-[180px] justify-center p-6'
+    service.size === 'large' && 'justify-between p-8',
+    service.size === 'medium' && 'justify-between p-6',
+    service.size === 'small' && 'justify-center p-6',
+    // Glassmorphism effect for custom-software card
+    service.id === 'custom-software' && 'overflow-hidden',
+    service.id === 'custom-software' &&
+      'hover:bg-card/50 hover:backdrop-blur-md'
   )
 
   return (
@@ -111,6 +111,25 @@ export function ServiceCard({ service }: ServiceCardProps) {
       role="article"
       aria-label={t(`${service.id}.title`)}
     >
+      {/* Glassmorphism overlay for custom-software card on hover */}
+      {service.id === 'custom-software' && (
+        <div className="absolute inset-0 z-[5] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#00E68B]/10 via-transparent to-[#00E68B]/5 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,230,139,0.1),transparent_50%)]" />
+          {/* Crystalline pattern overlay */}
+          <div
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage: `
+                linear-gradient(30deg, transparent 48%, rgba(0,230,139,0.1) 49%, rgba(0,230,139,0.1) 51%, transparent 52%),
+                linear-gradient(150deg, transparent 48%, rgba(0,230,139,0.05) 49%, rgba(0,230,139,0.05) 51%, transparent 52%)
+              `,
+              backgroundSize: '20px 20px',
+            }}
+          />
+        </div>
+      )}
+
       {/* Background image for large cards */}
       {service.backgroundImage && (
         <>
@@ -310,82 +329,261 @@ export function ServiceCard({ service }: ServiceCardProps) {
 
         {/* Content */}
         <div className="flex-1">
-          <div className="flex items-center gap-3 mb-2">
-            <span
-              className="material-symbols-outlined text-2xl text-muted-foreground group-hover:text-[#00E68B] transition-colors icon-glow"
-              aria-label={`${t(`${service.id}.title`)} icon`}
-            >
-              {service.icon}
-            </span>
-            <h3 className="text-xl font-bold group-hover:text-[#00E68B] transition-colors">
-              {t(`${service.id}.title`)}
-            </h3>
-          </div>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {t(`${service.id}.description`)}
-          </p>
+          {/* Special layout for multi-platform card */}
+          {service.id === 'multi-platform' ? (
+            <div className="space-y-4">
+              {/* Devices SVG Image - Full width */}
+              <div className="w-full">
+                <img
+                  src="/device-logos/devices.svg"
+                  alt="Multiple devices"
+                  className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity"
+                />
+              </div>
+
+              {/* Title - Left aligned */}
+              <h3 className="text-xl font-bold group-hover:text-[#00E68B] transition-colors">
+                {t(`${service.id}.title`)}
+              </h3>
+
+              {/* Platform logos - Left aligned */}
+              {service.platforms && service.platforms.length > 0 && (
+                <div className="flex flex-wrap gap-3 items-center">
+                  {service.platforms.map((platform) => {
+                    const platformIcons: Record<string, string> = {
+                      iOS: '/device-logos/apple.svg',
+                      Android: '/device-logos/android.svg',
+                      Web: '/device-logos/chrome.svg',
+                      Windows: '/device-logos/microsoft.svg',
+                    }
+
+                    const iconPath = platformIcons[platform]
+
+                    return iconPath ? (
+                      <img
+                        key={platform}
+                        src={iconPath}
+                        alt={platform}
+                        className="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity"
+                      />
+                    ) : (
+                      <span
+                        key={platform}
+                        className="bg-muted text-muted-foreground text-[10px] px-2 py-1 rounded-sm uppercase"
+                      >
+                        {platform}
+                      </span>
+                    )
+                  })}
+                </div>
+              )}
+
+              {/* Description - Left aligned */}
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                {t(`${service.id}.description`)}
+              </p>
+            </div>
+          ) : service.id === 'landing-pages' ? (
+            /* Special layout for landing-pages card */
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-6">
+              {/* Left column: Title, Description, and Features */}
+              <div className="space-y-3 flex flex-col">
+                {/* Title and Description */}
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold group-hover:text-[#00E68B] transition-colors">
+                    {t(`${service.id}.title`)}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {t(`${service.id}.description`)}
+                  </p>
+                </div>
+
+                {/* Features in 2 sub-columns */}
+                {service.features && service.features.length > 0 && (
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+                    {service.features.map((feature) => {
+                      const [icon, label] = feature.split(':')
+                      return (
+                        <div
+                          key={feature}
+                          className="flex items-center gap-1.5"
+                        >
+                          <span
+                            className="material-symbols-outlined text-lg text-muted-foreground group-hover:text-[#00E68B] transition-colors"
+                            aria-hidden="true"
+                          >
+                            {icon}
+                          </span>
+                          <span className="text-xs text-muted-foreground">
+                            {label}
+                          </span>
+                        </div>
+                      )
+                    })}
+                  </div>
+                )}
+              </div>
+
+              {/* Right column: Browser Window */}
+              <div className="flex items-start">
+                <div className="browser-window w-full max-h-[290] md:max-h-[220px]">
+                  <div className="browser-header">
+                    <div className="browser-controls">
+                      <div className="window-button btn-red"></div>
+                      <div className="window-button btn-yellow"></div>
+                      <div className="window-button btn-green"></div>
+                    </div>
+                    <div className="browser-nav">
+                      <div className="browser-nav-buttons">
+                        <div className="browser-nav-button">&lt;</div>
+                        <div className="browser-nav-button">&gt;</div>
+                        <div className="browser-nav-button">↻</div>
+                      </div>
+                      <div className="browser-url-bar">bryanacosta.com</div>
+                      <div className="browser-settings">⚙</div>
+                    </div>
+                  </div>
+                  <div className="browser-content">
+                    <div className="browser-scroll-content">
+                      {/* Section 1 */}
+                      <div className="browser-element">
+                        <div className="browser-image-placeholder"></div>
+                        <div className="browser-text-line long"></div>
+                        <div className="browser-text-line medium"></div>
+                        <div className="browser-text-line short"></div>
+                      </div>
+                      {/* Section 2 */}
+                      <div className="browser-element">
+                        <div className="browser-text-line long"></div>
+                        <div className="browser-text-line medium"></div>
+                        <div className="browser-image-placeholder"></div>
+                      </div>
+                      {/* Section 3 */}
+                      <div className="browser-element">
+                        <div className="browser-text-line medium"></div>
+                        <div className="browser-text-line long"></div>
+                        <div className="browser-text-line short"></div>
+                      </div>
+                      {/* Section 4 */}
+                      <div className="browser-element">
+                        <div className="browser-image-placeholder"></div>
+                        <div className="browser-text-line long"></div>
+                        <div className="browser-text-line medium"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="flex items-center gap-3 mb-2">
+                <span
+                  className="material-symbols-outlined text-2xl text-muted-foreground group-hover:text-[#00E68B] transition-colors icon-glow"
+                  aria-label={`${t(`${service.id}.title`)} icon`}
+                >
+                  {service.icon}
+                </span>
+                <h3 className="text-xl font-bold group-hover:text-[#00E68B] transition-colors">
+                  {t(`${service.id}.title`)}
+                </h3>
+              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                {t(`${service.id}.description`)}
+              </p>
+
+              {/* Features with divider above (not for landing-pages) */}
+              {service.features &&
+                service.features.length > 0 &&
+                service.id !== 'landing-pages' && (
+                  <div className="border-t border-border pt-4 space-y-2">
+                    {service.features.map((feature) => (
+                      <div key={feature} className="flex items-center gap-2">
+                        <span
+                          className="material-symbols-outlined text-sm"
+                          style={{ color: '#00E68B' }}
+                          aria-hidden="true"
+                        >
+                          check_circle
+                        </span>
+                        <span className="text-xs text-muted-foreground">
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+            </>
+          )}
         </div>
 
-        {/* Footer features */}
-        {service.features && service.features.length > 0 && (
-          <div className="mt-6 border-t border-border pt-4 space-y-2">
-            {service.features.map((feature) => (
-              <div key={feature} className="flex items-center gap-2">
-                <span
-                  className="material-symbols-outlined text-sm"
-                  style={{ color: '#00E68B' }}
-                  aria-hidden="true"
-                >
-                  check_circle
-                </span>
-                <span className="text-xs text-muted-foreground">{feature}</span>
-              </div>
-            ))}
-          </div>
-        )}
+        {/* Footer features for cards that already handled features inline */}
+        {service.features &&
+          service.features.length > 0 &&
+          service.id !== 'landing-pages' &&
+          service.id === 'multi-platform' && (
+            <div className="mt-6 border-t border-border pt-4 space-y-2">
+              {service.features.map((feature) => (
+                <div key={feature} className="flex items-center gap-2">
+                  <span
+                    className="material-symbols-outlined text-sm"
+                    style={{ color: '#00E68B' }}
+                    aria-hidden="true"
+                  >
+                    check_circle
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {feature}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
 
-        {/* Footer platforms */}
-        {service.platforms && service.platforms.length > 0 && (
-          <div className="mt-6 flex flex-wrap gap-3 items-center">
-            {service.platforms.map((platform) => {
-              const platformIcons: Record<string, string> = {
-                iOS: '/device-logos/apple.svg',
-                Android: '/device-logos/android.svg',
-                Web: '/device-logos/chrome.svg',
-                Windows: '/device-logos/microsoft.svg',
-                OpenAI: '/ai-logos/openai.svg',
-                Claude: '/ai-logos/claude.svg',
-                Gemini: '/ai-logos/gemini.svg',
-                Mistral: '/ai-logos/mistral.svg',
-                Ollama: '/ai-logos/ollama.svg',
-                Grok: '/ai-logos/grok.svg',
-                DeepSeek: '/ai-logos/deepseek.svg',
-                Qwen: '/ai-logos/qwen.svg',
-                MiniMax: '/ai-logos/minimax.svg',
-                HuggingFace: '/ai-logos/huggingface.svg',
-                MCP: '/ai-logos/mcp.svg',
-              }
+        {/* Footer platforms (only for non-multi-platform cards) */}
+        {service.platforms &&
+          service.platforms.length > 0 &&
+          service.id !== 'multi-platform' && (
+            <div className="mt-6 flex flex-wrap gap-3 items-center">
+              {service.platforms.map((platform) => {
+                const platformIcons: Record<string, string> = {
+                  iOS: '/device-logos/apple.svg',
+                  Android: '/device-logos/android.svg',
+                  Web: '/device-logos/chrome.svg',
+                  Windows: '/device-logos/microsoft.svg',
+                  OpenAI: '/ai-logos/openai.svg',
+                  Claude: '/ai-logos/claude.svg',
+                  Gemini: '/ai-logos/gemini.svg',
+                  Mistral: '/ai-logos/mistral.svg',
+                  Ollama: '/ai-logos/ollama.svg',
+                  Grok: '/ai-logos/grok.svg',
+                  DeepSeek: '/ai-logos/deepseek.svg',
+                  Qwen: '/ai-logos/qwen.svg',
+                  MiniMax: '/ai-logos/minimax.svg',
+                  HuggingFace: '/ai-logos/huggingface.svg',
+                  MCP: '/ai-logos/mcp.svg',
+                }
 
-              const iconPath = platformIcons[platform]
+                const iconPath = platformIcons[platform]
 
-              return iconPath ? (
-                <img
-                  key={platform}
-                  src={iconPath}
-                  alt={platform}
-                  className="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity"
-                />
-              ) : (
-                <span
-                  key={platform}
-                  className="bg-muted text-muted-foreground text-[10px] px-2 py-1 rounded-sm uppercase"
-                >
-                  {platform}
-                </span>
-              )
-            })}
-          </div>
-        )}
+                return iconPath ? (
+                  <img
+                    key={platform}
+                    src={iconPath}
+                    alt={platform}
+                    className="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                ) : (
+                  <span
+                    key={platform}
+                    className="bg-muted text-muted-foreground text-[10px] px-2 py-1 rounded-sm uppercase"
+                  >
+                    {platform}
+                  </span>
+                )
+              })}
+            </div>
+          )}
       </div>
     </div>
   )

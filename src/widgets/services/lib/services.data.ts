@@ -65,5 +65,17 @@ export const services: Service[] = [
     size: 'small',
     colSpan: 2,
     rowSpan: 1,
+    features: [
+      'conversion_path:Conversion',
+      'analytics:Analytics',
+      'speed:Low LCP',
+      'search:SEO-ready',
+      'accessibility:Accessible',
+      'language:Multi-language',
+      'devices:Responsive',
+      'animation:Animations',
+      'security:Secure',
+      'hub:Integrations',
+    ],
   },
 ]
