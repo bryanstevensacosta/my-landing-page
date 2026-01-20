@@ -370,5 +370,87 @@
         "description": "High-conversion, fast, SEO-optimized."
       }
     }
+  },
+  "contact": {
+    "form": {
+      "title": "Let's Build Something",
+      "subtitle": "Tell me about your project and let's discuss how we can work together",
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your@email.com"
+      },
+      "company": {
+        "label": "Company",
+        "placeholder": "Your company (optional)"
+      },
+      "projectType": {
+        "label": "Project Type",
+        "placeholder": "Select project type"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell me about your project..."
+      },
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "error": {
+        "title": "Failed to send message",
+        "network": "Network error. Please check your connection and try again.",
+        "server": "Server error. Please try again later.",
+        "timeout": "Request timeout. Please try again."
+      }
+    },
+    "trust": {
+      "available": "AVAILABLE FOR NEW PROJECTS",
+      "heading": {
+        "line1": "Why Work",
+        "line2": "With Me"
+      },
+      "description": "Direct collaboration with a senior engineer who understands both the technical and business sides of your project.",
+      "response": {
+        "title": "24h Response Time",
+        "description": "Quick turnaround on all inquiries"
+      },
+      "technical": {
+        "title": "Technical Feedback",
+        "description": "Honest assessment of your project scope"
+      },
+      "nda": {
+        "title": "NDA Ready",
+        "description": "Your ideas stay confidential"
+      },
+      "trustedBy": "Trusted by founders and teams at"
+    },
+    "success": {
+      "title": "Message Sent!",
+      "message": "Thanks for reaching out. I'll review your message and get back to you within 24 hours.",
+      "cta": "Explore My Work"
+    },
+    "projectType": {
+      "mvp": "MVP / New Product",
+      "scaling": "Scaling Existing Product",
+      "ai": "AI Integration",
+      "consultation": "Technical Consultation"
+    }
+  },
+  "validation": {
+    "name": {
+      "required": "Name is required"
+    },
+    "email": {
+      "required": "Email is required",
+      "invalid": "Please enter a valid email address"
+    },
+    "projectType": {
+      "required": "Please select a project type"
+    },
+    "message": {
+      "required": "Message is required",
+      "minLength": "Message must be at least 10 characters"
+    }
   }
 }

@@ -370,5 +370,87 @@
         "description": "Alta conversión, rápidas, optimizadas para SEO."
       }
     }
+  },
+  "contact": {
+    "form": {
+      "title": "Construyamos Algo Juntos",
+      "subtitle": "Cuéntame sobre tu proyecto y discutamos cómo podemos trabajar juntos",
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Tu nombre"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "tu@email.com"
+      },
+      "company": {
+        "label": "Empresa",
+        "placeholder": "Tu empresa (opcional)"
+      },
+      "projectType": {
+        "label": "Tipo de Proyecto",
+        "placeholder": "Selecciona el tipo de proyecto"
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Cuéntame sobre tu proyecto..."
+      },
+      "submit": "Enviar Mensaje",
+      "submitting": "Enviando...",
+      "error": {
+        "title": "Error al enviar mensaje",
+        "network": "Error de red. Por favor verifica tu conexión e intenta nuevamente.",
+        "server": "Error del servidor. Por favor intenta más tarde.",
+        "timeout": "Tiempo de espera agotado. Por favor intenta nuevamente."
+      }
+    },
+    "trust": {
+      "available": "DISPONIBLE PARA NUEVOS PROYECTOS",
+      "heading": {
+        "line1": "Por Qué Trabajar",
+        "line2": "Conmigo"
+      },
+      "description": "Colaboración directa con un ingeniero senior que entiende tanto el lado técnico como el de negocio de tu proyecto.",
+      "response": {
+        "title": "Respuesta en 24h",
+        "description": "Respuesta rápida a todas las consultas"
+      },
+      "technical": {
+        "title": "Feedback Técnico",
+        "description": "Evaluación honesta del alcance de tu proyecto"
+      },
+      "nda": {
+        "title": "NDA Disponible",
+        "description": "Tus ideas permanecen confidenciales"
+      },
+      "trustedBy": "Confiado por fundadores y equipos en"
+    },
+    "success": {
+      "title": "¡Mensaje Enviado!",
+      "message": "Gracias por contactarme. Revisaré tu mensaje y te responderé dentro de 24 horas.",
+      "cta": "Explorar Mi Trabajo"
+    },
+    "projectType": {
+      "mvp": "MVP / Nuevo Producto",
+      "scaling": "Escalar Producto Existente",
+      "ai": "Integración de IA",
+      "consultation": "Consultoría Técnica"
+    }
+  },
+  "validation": {
+    "name": {
+      "required": "El nombre es requerido"
+    },
+    "email": {
+      "required": "El email es requerido",
+      "invalid": "Por favor ingresa un email válido"
+    },
+    "projectType": {
+      "required": "Por favor selecciona un tipo de proyecto"
+    },
+    "message": {
+      "required": "El mensaje es requerido",
+      "minLength": "El mensaje debe tener al menos 10 caracteres"
+    }
   }
 }
