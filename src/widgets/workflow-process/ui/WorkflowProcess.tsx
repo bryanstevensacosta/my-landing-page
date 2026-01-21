@@ -26,7 +26,7 @@ export function WorkflowProcess() {
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12 md:mb-20">
-          <span className="inline-block py-1 px-3 rounded-full bg-[#4C02FB]/10 text-[#4C02FB] text-sm font-bold tracking-wide border border-[#4C02FB]/20">
+          <span className="inline-block py-1 px-3 rounded-full bg-[#4C02FB]/10 text-white text-sm font-bold tracking-wide border border-[#4C02FB]/20">
             {t('badge')}
           </span>
           <h2 

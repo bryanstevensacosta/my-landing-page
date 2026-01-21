@@ -36,12 +36,12 @@ export function StepCard({ step, isMobile = false }: StepCardProps) {
           "font-bold text-white mb-1",
           isMobile ? "text-xl" : "text-2xl"
         )}>
-          <span className="text-[#4C02FB] mr-2">{step.number}.</span>
+          <span className="text-white mr-2">{step.number}.</span>
           {t(step.titleKey)}
         </h3>
         
         <p className={cn(
-          "text-[#4C02FB]/80 font-medium uppercase tracking-wider mb-4",
+          "text-white/80 font-medium uppercase tracking-wider mb-4",
           isMobile ? "text-xs" : "text-sm"
         )}>
           {t(step.subtitleKey)}
