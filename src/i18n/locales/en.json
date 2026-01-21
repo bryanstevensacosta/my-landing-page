@@ -24,8 +24,8 @@
     ],
     "description": "Building, improving, scaling, and maintaining products designed to grow with your business and deliver long-term value",
     "cta": {
-      "explore": "Explore Projects",
-      "contact": "Let's Talk"
+      "workflow": "How I Work",
+      "explore": "Featured Projects"
     },
     "guarantee": "Projects delivered on time with guaranteed technical quality",
     "avatarAlt": "Developer Avatar"
@@ -454,58 +454,58 @@
     }
   },
   "workflow": {
-    "badge": "MY WORKFLOW",
+    "badge": "WORKFLOW",
     "title": {
-      "part1": "My",
-      "highlight": "Snake Line",
-      "part2": "Process"
+      "part1": "From",
+      "highlight": "Vision",
+      "part2": "To Scale"
     },
     "subtitle": "A distinctive, streamlined approach to building world-class software. I connect the dots between your vision and reality.",
     "steps": {
       "discovery": {
-        "title": "Discovery & Goals",
-        "subtitle": "Defining the north star",
+        "title": "Understand & Discover",
+        "subtitle": "Aligning on the real problem",
         "activities": [
           "Stakeholder interviews & analysis",
-          "Market requirement definition"
+          "Requeriments definition"
         ]
       },
       "strategy": {
-        "title": "Strategy & Arch",
-        "subtitle": "Laying a scalable foundation",
+        "title": "Strategy & Architecture",
+        "subtitle": "Designing the right solution",
         "activities": [
           "Tech stack selection",
-          "Database schema design"
+          "System archicture & design"
         ]
       },
       "development": {
-        "title": "Development",
-        "subtitle": "Bringing ideas to life",
+        "title": "Build",
+        "subtitle": "Executing with quality and speed",
         "activities": [
-          "Agile sprint cycles",
-          "Continuous integration"
+          "Iterative delivery cycles",
+          "Production-ready implementation"
         ]
       },
       "testing": {
-        "title": "Testing & QA",
-        "subtitle": "Ensuring flawless performance",
+        "title": "Launch",
+        "subtitle": "Production-ready delivery",
         "activities": [
-          "Automated QA suites",
-          "Load and stress testing"
+          "Release readiness",
+          "Monitoring & reliability checks"
         ]
       },
       "delivery": {
-        "title": "Delivery & Support",
-        "subtitle": "Launch and beyond",
+        "title": "Scale",
+        "subtitle": "Optimizing for growth",
         "activities": [
-          "Deployment pipelines",
-          "24/7 post-launch monitoring"
+          "Continuous improvements",
+          "Performance optimization"
         ]
       }
     },
     "cta": {
-      "title": "Ready to start your project?",
-      "description": "Let's build something great together. My process ensures transparency and excellence at every step.",
+      "title": "Start with a free project evaluation",
+      "description": "Get clarity on feasibility, scope, and next steps before committing.",
       "button": "Start Discovery"
     }
   }

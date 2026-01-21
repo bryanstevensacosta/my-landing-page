@@ -41,6 +41,21 @@ export function Hero() {
     }
   }
 
+  const handleWorkflowClick = () => {
+    const workflowSection = document.querySelector('#workflow')
+    if (workflowSection) {
+      const isMobile = window.innerWidth < 768
+      const headerOffset = isMobile ? 25 : 88
+      const elementPosition = workflowSection.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      })
+    }
+  }
+
   return (
     <main className="relative min-h-screen pt-24 sm:pt-28 md:pt-32 pb-12 md:pb-20 flex flex-col items-center overflow-x-hidden bg-transparent px-6">
       {/* Blur backgrounds */}
@@ -163,7 +178,7 @@ export function Hero() {
           {/* CTA Buttons with Glassmorphism */}
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full justify-center mt-4 sm:mt-6 md:mt-8 px-4 sm:px-0">
             <Button
-              onClick={handleExploreClick}
+              onClick={handleWorkflowClick}
               className="transform-gpu w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 rounded-2xl text-white font-bold transition-all duration-300 hover:-translate-y-1 active:scale-95 cursor-pointer"
               style={{
                 background: 'rgba(74, 43, 252, 0.9)',
@@ -187,16 +202,10 @@ export function Hero() {
                   : undefined
               }
             >
-              {t('cta.explore')}{' '}
-              <Image
-                src="/folder-file.svg"
-                alt="folder"
-                width={64}
-                height={64}
-                className="ml-1 size-6"
-              />
+              {t('cta.workflow')}
             </Button>
             <Button
+              onClick={handleExploreClick}
               variant="outline"
               className="transform-gpu w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 rounded-2xl text-white font-bold transition-all duration-300 hover:-translate-y-1 active:scale-95"
               style={{
@@ -215,7 +224,14 @@ export function Hero() {
                 e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.1)'
               }}
             >
-              {t('cta.contact')}
+              {t('cta.explore')}{' '}
+              <Image
+                src="/folder-file.svg"
+                alt="folder"
+                width={64}
+                height={64}
+                className="ml-1 size-6"
+              />
             </Button>
             <SocialLinks />
           </div>
