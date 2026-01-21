@@ -73,9 +73,18 @@ export function Hero() {
         <Avatar />
 
         <div className="text-center space-y-3 md:space-y-4 max-w-4xl mx-auto w-full -mt-2 sm:-mt-3 md:-mt-4">
+          {/* Badge with Glassmorphism */}
           <div
-            className="inline-flex items-center gap-2 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full border border-white/10 bg-white/5 text-xs sm:text-sm md:text-base tracking-[0.2em] font-figtree"
-            style={{ color: '#ffffffff', fontWeight: 800 }}
+            className="inline-flex items-center gap-2 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full text-xs sm:text-sm md:text-base tracking-[0.2em] font-figtree"
+            style={{ 
+              color: '#ffffffff', 
+              fontWeight: 800,
+              background: 'rgba(255, 255, 255, 0.05)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
+            }}
           >
             <Image
               src="/code-square-rounded.svg"
@@ -111,11 +120,15 @@ export function Hero() {
               </span>
             </span>
             <span className="block">{t('titleLine2')}</span>
+            {/* Rotating text box with Glassmorphism overlay */}
             <span className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mt-4 sm:mt-5 md:mt-6">
               <span
-                className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 rounded-xl"
+                className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 rounded-xl relative overflow-hidden"
                 style={{
-                  background: 'linear-gradient(90deg, #4800ffff, #E4606E)',
+                  background: 'linear-gradient(90deg, rgba(72, 0, 255, 0.8), rgba(228, 96, 110, 0.8))',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
+                  boxShadow: '0 4px 20px rgba(72, 0, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
                 }}
               >
                 <RotatingText
@@ -147,26 +160,30 @@ export function Hero() {
             {t('description')}
           </p>
 
+          {/* CTA Buttons with Glassmorphism */}
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full justify-center mt-4 sm:mt-6 md:mt-8 px-4 sm:px-0">
             <Button
               onClick={handleExploreClick}
               className="transform-gpu w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 rounded-2xl text-white font-bold transition-all duration-300 hover:-translate-y-1 active:scale-95 cursor-pointer"
               style={{
-                background: '#4A2BFC',
-                boxShadow: isMobile ? 'none' : '0 0 30px rgba(72, 0, 255, 0.4)',
+                background: 'rgba(74, 43, 252, 0.9)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                boxShadow: isMobile ? '0 4px 20px rgba(74, 43, 252, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)' : '0 0 30px rgba(72, 0, 255, 0.4), 0 4px 20px rgba(74, 43, 252, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
               }}
               onMouseEnter={
                 !isMobile
-                  ? (e) =>
-                      (e.currentTarget.style.boxShadow =
-                        '0 0 45px rgba(72, 0, 255, 0.6)')
+                  ? (e) => {
+                      e.currentTarget.style.boxShadow = '0 0 45px rgba(72, 0, 255, 0.6), 0 4px 20px rgba(74, 43, 252, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                    }
                   : undefined
               }
               onMouseLeave={
                 !isMobile
-                  ? (e) =>
-                      (e.currentTarget.style.boxShadow =
-                        '0 0 30px rgba(72, 0, 255, 0.4)')
+                  ? (e) => {
+                      e.currentTarget.style.boxShadow = '0 0 30px rgba(72, 0, 255, 0.4), 0 4px 20px rgba(74, 43, 252, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                    }
                   : undefined
               }
             >
@@ -181,7 +198,22 @@ export function Hero() {
             </Button>
             <Button
               variant="outline"
-              className="transform-gpu w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 rounded-2xl border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 text-white font-bold transition-all duration-300 hover:-translate-y-1 active:scale-95"
+              className="transform-gpu w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 rounded-2xl text-white font-bold transition-all duration-300 hover:-translate-y-1 active:scale-95"
+              style={{
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)'
+                e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.2)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'
+                e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.1)'
+              }}
             >
               {t('cta.contact')}
             </Button>
