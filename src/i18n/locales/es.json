@@ -434,7 +434,12 @@
       "mvp": "MVP / Nuevo Producto",
       "scaling": "Escalar Producto Existente",
       "ai": "Integración de IA",
-      "consultation": "Consultoría Técnica"
+      "mobileApp": "Desarrollo de App Móvil",
+      "webApp": "Aplicación Web",
+      "apiBackend": "Desarrollo de API / Backend",
+      "legacyMigration": "Migración de Sistema Legacy",
+      "consultation": "Consultoría Técnica",
+      "other": "Otro"
     }
   },
   "validation": {

@@ -71,7 +71,27 @@ export const projectTypeOptions: SelectOption[] = [
     label: 'contact.projectType.ai',
   },
   {
+    value: 'mobile-app',
+    label: 'contact.projectType.mobileApp',
+  },
+  {
+    value: 'web-app',
+    label: 'contact.projectType.webApp',
+  },
+  {
+    value: 'api-backend',
+    label: 'contact.projectType.apiBackend',
+  },
+  {
+    value: 'legacy-migration',
+    label: 'contact.projectType.legacyMigration',
+  },
+  {
     value: 'consultation',
     label: 'contact.projectType.consultation',
+  },
+  {
+    value: 'other',
+    label: 'contact.projectType.other',
   },
 ]
