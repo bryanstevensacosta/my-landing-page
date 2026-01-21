@@ -10,14 +10,64 @@ export function WorkflowProcess() {
   return (
     <section 
       id="workflow" 
-      className="relative py-16 md:py-24 px-4 sm:px-6"
+      className="relative py-16 md:py-24 px-4 sm:px-6 overflow-hidden"
       aria-labelledby="workflow-heading"
     >
+      {/* Abstract gradient shapes - Metallic white blurs */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        {/* Top left metallic blur */}
+        <div 
+          className="absolute -top-40 -left-40 w-96 h-96 rounded-full opacity-20"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 40%, transparent 70%)',
+            filter: 'blur(60px)',
+          }}
+        />
+        
+        {/* Top right abstract shape */}
+        <div 
+          className="absolute top-20 -right-32 w-80 h-80 rounded-full opacity-15"
+          style={{
+            background: 'radial-gradient(ellipse at top, rgba(255,255,255,0.3) 0%, rgba(200,200,255,0.1) 50%, transparent 70%)',
+            filter: 'blur(70px)',
+            transform: 'rotate(45deg)',
+          }}
+        />
+
+        {/* Center floating orb */}
+        <div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(76,2,251,0.1) 30%, transparent 60%)',
+            filter: 'blur(80px)',
+          }}
+        />
+
+        {/* Bottom left shape */}
+        <div 
+          className="absolute -bottom-32 -left-20 w-72 h-72 opacity-15"
+          style={{
+            background: 'radial-gradient(ellipse, rgba(255,255,255,0.35) 0%, rgba(224,93,114,0.1) 40%, transparent 70%)',
+            filter: 'blur(65px)',
+            borderRadius: '40% 60% 70% 30%',
+          }}
+        />
+
+        {/* Bottom right metallic glow */}
+        <div 
+          className="absolute bottom-10 -right-40 w-96 h-96 rounded-full opacity-20"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 50%, transparent 70%)',
+            filter: 'blur(75px)',
+          }}
+        />
+      </div>
+
       {/* Background grid pattern */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        className="absolute inset-0 pointer-events-none opacity-[0.02]"
         style={{
-          backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
           backgroundSize: '40px 40px',
         }}
         aria-hidden="true"
@@ -26,7 +76,7 @@ export function WorkflowProcess() {
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12 md:mb-20">
-          <span className="inline-block py-1 px-3 rounded-full bg-[#4C02FB]/10 text-white text-sm font-bold tracking-wide border border-[#4C02FB]/20">
+          <span className="inline-block py-1 px-3 rounded-full bg-white/5 backdrop-blur-sm text-white text-sm font-bold tracking-wide border border-white/10 shadow-lg">
             {t('badge')}
           </span>
           <h2 
