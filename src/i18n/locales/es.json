@@ -454,13 +454,13 @@
     }
   },
   "workflow": {
-    "badge": "NUESTRO FLUJO",
+    "badge": "MI FLUJO DE TRABAJO",
     "title": {
-      "part1": "Nuestro",
+      "part1": "Mi",
       "highlight": "Proceso Serpiente",
       "part2": ""
     },
-    "subtitle": "Un enfoque distintivo y optimizado para construir software de clase mundial. Conectamos los puntos entre tu visión y la realidad.",
+    "subtitle": "Un enfoque distintivo y optimizado para construir software de clase mundial. Conecto los puntos entre tu visión y la realidad.",
     "steps": {
       "discovery": {
         "title": "Descubrimiento y Objetivos",
@@ -505,7 +505,7 @@
     },
     "cta": {
       "title": "¿Listo para comenzar tu proyecto?",
-      "description": "Construyamos algo grandioso juntos. Nuestro proceso garantiza transparencia y excelencia en cada paso.",
+      "description": "Construyamos algo grandioso juntos. Mi proceso garantiza transparencia y excelencia en cada paso.",
       "button": "Iniciar Descubrimiento"
     }
   }

@@ -454,13 +454,13 @@
     }
   },
   "workflow": {
-    "badge": "OUR WORKFLOW",
+    "badge": "MY WORKFLOW",
     "title": {
-      "part1": "Our",
+      "part1": "My",
       "highlight": "Snake Line",
       "part2": "Process"
     },
-    "subtitle": "A distinctive, streamlined approach to building world-class software. We connect the dots between your vision and reality.",
+    "subtitle": "A distinctive, streamlined approach to building world-class software. I connect the dots between your vision and reality.",
     "steps": {
       "discovery": {
         "title": "Discovery & Goals",
@@ -505,7 +505,7 @@
     },
     "cta": {
       "title": "Ready to start your project?",
-      "description": "Let's build something great together. Our process ensures transparency and excellence at every step.",
+      "description": "Let's build something great together. My process ensures transparency and excellence at every step.",
       "button": "Start Discovery"
     }
   }
