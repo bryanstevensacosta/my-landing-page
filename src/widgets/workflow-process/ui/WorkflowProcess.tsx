@@ -140,6 +140,104 @@ export function WorkflowProcess() {
         />
       </div>
 
+      {/* Abstract gradient shapes on top - z-[3] above everything */}
+      <div className="absolute inset-0 pointer-events-none z-[3]" aria-hidden="true">
+        {/* Purple-white gradient blob - top left */}
+        <div 
+          className="absolute top-16 left-12 w-72 h-72"
+          style={{
+            background: 'radial-gradient(circle, rgba(76,2,251,0.15) 0%, rgba(255,255,255,0.08) 30%, transparent 70%)',
+            filter: 'blur(40px)',
+          }}
+        />
+
+        {/* Pink-white gradient blob - top right */}
+        <div 
+          className="absolute top-32 right-20 w-80 h-64"
+          style={{
+            background: 'radial-gradient(ellipse, rgba(224,93,114,0.12) 0%, rgba(255,255,255,0.06) 35%, transparent 70%)',
+            filter: 'blur(45px)',
+            transform: 'rotate(-25deg)',
+          }}
+        />
+
+        {/* White-purple gradient blob - center left */}
+        <div 
+          className="absolute top-1/3 left-1/4 w-64 h-96"
+          style={{
+            background: 'radial-gradient(ellipse, rgba(255,255,255,0.1) 0%, rgba(76,2,251,0.08) 40%, transparent 75%)',
+            filter: 'blur(50px)',
+            transform: 'rotate(15deg)',
+          }}
+        />
+
+        {/* Purple gradient blob - center */}
+        <div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-80"
+          style={{
+            background: 'radial-gradient(circle, rgba(76,2,251,0.1) 0%, rgba(255,255,255,0.05) 45%, transparent 80%)',
+            filter: 'blur(55px)',
+          }}
+        />
+
+        {/* Pink-white gradient blob - center right */}
+        <div 
+          className="absolute top-2/3 right-1/4 w-72 h-88"
+          style={{
+            background: 'radial-gradient(ellipse, rgba(224,93,114,0.1) 0%, rgba(255,255,255,0.07) 38%, transparent 72%)',
+            filter: 'blur(48px)',
+            transform: 'rotate(30deg)',
+          }}
+        />
+
+        {/* White gradient blob - bottom left */}
+        <div 
+          className="absolute bottom-24 left-16 w-80 h-72"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(76,2,251,0.06) 42%, transparent 75%)',
+            filter: 'blur(52px)',
+          }}
+        />
+
+        {/* Purple-pink gradient blob - bottom center */}
+        <div 
+          className="absolute bottom-16 left-1/3 w-88 h-64"
+          style={{
+            background: 'radial-gradient(ellipse, rgba(76,2,251,0.08) 0%, rgba(224,93,114,0.08) 35%, transparent 70%)',
+            filter: 'blur(46px)',
+            transform: 'rotate(-18deg)',
+          }}
+        />
+
+        {/* White-pink gradient blob - bottom right */}
+        <div 
+          className="absolute bottom-32 right-12 w-76 h-76"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.09) 0%, rgba(224,93,114,0.1) 40%, transparent 78%)',
+            filter: 'blur(44px)',
+          }}
+        />
+
+        {/* Small accent blob - upper center */}
+        <div 
+          className="absolute top-24 left-1/2 -translate-x-1/2 w-56 h-56"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(76,2,251,0.1) 30%, transparent 65%)',
+            filter: 'blur(35px)',
+          }}
+        />
+
+        {/* Small accent blob - middle left */}
+        <div 
+          className="absolute top-1/2 left-8 w-48 h-64"
+          style={{
+            background: 'radial-gradient(ellipse, rgba(224,93,114,0.14) 0%, transparent 68%)',
+            filter: 'blur(38px)',
+            transform: 'rotate(45deg)',
+          }}
+        />
+      </div>
+
       {/* Abstract gradient shapes - Metallic white blurs - Lower z-index */}
       <div className="absolute inset-0 pointer-events-none z-[0]" aria-hidden="true">
         {/* Top left metallic blur */}
