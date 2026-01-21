@@ -23,7 +23,6 @@ interface ContactFormProps {
 
 export function ContactForm({ className }: ContactFormProps) {
   const t = useTranslations('contact.form')
-  const tValidation = useTranslations('validation')
 
   const {
     formData,
@@ -66,7 +65,7 @@ export function ContactForm({ className }: ContactFormProps) {
             validationRules={[
               {
                 type: 'required',
-                message: tValidation('name.required'),
+                message: 'validation.name.required',
               },
             ]}
           />
@@ -84,11 +83,11 @@ export function ContactForm({ className }: ContactFormProps) {
             validationRules={[
               {
                 type: 'required',
-                message: tValidation('email.required'),
+                message: 'validation.email.required',
               },
               {
                 type: 'email',
-                message: tValidation('email.invalid'),
+                message: 'validation.email.invalid',
               },
             ]}
           />
@@ -115,7 +114,7 @@ export function ContactForm({ className }: ContactFormProps) {
             validationRules={[
               {
                 type: 'required',
-                message: tValidation('projectType.required'),
+                message: 'validation.projectType.required',
               },
             ]}
           />
@@ -132,12 +131,12 @@ export function ContactForm({ className }: ContactFormProps) {
             validationRules={[
               {
                 type: 'required',
-                message: tValidation('message.required'),
+                message: 'validation.message.required',
               },
               {
                 type: 'minLength',
                 value: 10,
-                message: tValidation('message.minLength'),
+                message: 'validation.message.minLength',
               },
             ]}
           />
