@@ -5,6 +5,7 @@
   "scripts": {
     "build": "next build",
     "build:analyze": "ANALYZE=true next build",
+    "optimize:images": "node scripts/optimize-images.mjs",
     "dev": "next dev",
     "lint": "eslint . --ignore-pattern .next --ignore-pattern node_modules",
     "lint:fix": "eslint . --fix --ignore-pattern .next --ignore-pattern node_modules",
@@ -95,6 +96,7 @@
     "lint-staged": "^16.2.7",
     "postcss": "^8.5",
     "prettier": "^3.7.4",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.1.9",
     "tw-animate-css": "1.3.3",
     "typescript": "^5.7.2",

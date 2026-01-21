@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { useState } from 'react'
 import { projects, getTechStackIcons } from '@/entities/project/lib'
-import { ProjectModal } from './ProjectModal'
+import { ProjectModalDynamic } from './ProjectModalDynamic'
 
 function ProjectCard({
   project,
@@ -147,8 +147,8 @@ export function FeaturedProjects() {
         </div>
       </section>
 
-      {/* Modal */}
-      <ProjectModal
+      {/* Modal - Lazy loaded */}
+      <ProjectModalDynamic
         project={selectedProject || projects[0]}
         isOpen={!!selectedProject}
         onClose={() => setSelectedProject(null)}
