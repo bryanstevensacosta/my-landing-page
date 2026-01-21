@@ -34,7 +34,7 @@ export function WorkflowProcess() {
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight"
           >
             {t('title.part1')}{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4A2BFC] to-[#E05D72]">
               {t('title.highlight')}
             </span>{' '}
             {t('title.part2')}
