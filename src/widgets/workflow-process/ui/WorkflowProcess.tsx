@@ -13,11 +13,11 @@ export function WorkflowProcess() {
       className="relative py-16 md:py-24 px-4 sm:px-6 overflow-hidden"
       aria-labelledby="workflow-heading"
     >
-      {/* Background grid pattern - Higher z-index */}
+      {/* Background grid pattern - Higher z-index and more visible */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.05] z-[1]"
+        className="absolute inset-0 pointer-events-none opacity-[0.15] z-[1]"
         style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)',
           backgroundSize: '40px 40px',
         }}
         aria-hidden="true"
