@@ -439,6 +439,8 @@
       "apiBackend": "Desarrollo de API / Backend",
       "legacyMigration": "Migración de Sistema Legacy",
       "automationBots": "Automatización / Bots",
+      "landingPage": "Landing Page y Sitios Web",
+      "uxUiDesign": "Diseño UX/UI",
       "consultation": "Consultoría Técnica",
       "other": "Otro"
     }

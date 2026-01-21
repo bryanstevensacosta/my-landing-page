@@ -91,6 +91,14 @@ export const projectTypeOptions: SelectOption[] = [
     label: 'contact.projectType.automationBots',
   },
   {
+    value: 'landing-page',
+    label: 'contact.projectType.landingPage',
+  },
+  {
+    value: 'ux-ui-design',
+    label: 'contact.projectType.uxUiDesign',
+  },
+  {
     value: 'consultation',
     label: 'contact.projectType.consultation',
   },
