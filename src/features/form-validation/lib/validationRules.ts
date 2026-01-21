@@ -87,6 +87,10 @@ export const projectTypeOptions: SelectOption[] = [
     label: 'contact.projectType.legacyMigration',
   },
   {
+    value: 'automation-bots',
+    label: 'contact.projectType.automationBots',
+  },
+  {
     value: 'consultation',
     label: 'contact.projectType.consultation',
   },

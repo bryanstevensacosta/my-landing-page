@@ -438,6 +438,7 @@
       "webApp": "Web Application",
       "apiBackend": "API / Backend Development",
       "legacyMigration": "Legacy System Migration",
+      "automationBots": "Automation / Bots",
       "consultation": "Technical Consultation",
       "other": "Other"
     }
