@@ -145,8 +145,9 @@ export default async function LocaleLayout({
           <link
             rel="preload"
             as="image"
-            href="/professional-developer-portrait-dark-background.png"
-            type="image/png"
+            href="/professional-developer-portrait-dark-background.webp"
+            type="image/webp"
+            fetchPriority="high"
           />
           <link
             rel="preload"

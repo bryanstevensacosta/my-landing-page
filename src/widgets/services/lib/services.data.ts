@@ -57,7 +57,7 @@ export const services: Service[] = [
     size: 'small',
     colSpan: 1,
     rowSpan: 1,
-    gifImage: '/gif/audio.gif',
+    gifImage: '/gif/audio.webp',
   },
   {
     id: 'landing-pages',

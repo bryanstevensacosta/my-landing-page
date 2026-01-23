@@ -17,7 +17,7 @@ export const projects: Project[] = [
       'kubernetes',
     ],
     type: 'featured',
-    image: '/projects-images/crypto-wallet.png',
+    image: '/projects-images/crypto-wallet.webp',
     caseStudyKey: 'projects.items.defi.caseStudy',
   },
   {
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     ],
     categoryKey: 'projects.items.neural.category',
     type: 'featured',
-    image: '/projects-images/restaurant-delivery-app.png',
+    image: '/projects-images/restaurant-delivery-app.webp',
     caseStudyKey: 'projects.items.neural.caseStudy',
   },
   {
@@ -56,7 +56,7 @@ export const projects: Project[] = [
       'kubernetes',
     ],
     type: 'featured',
-    image: '/projects-images/rust-terminal-social.png',
+    image: '/projects-images/rust-terminal-social.webp',
     caseStudyKey: 'projects.items.saas.caseStudy',
   },
 ]
